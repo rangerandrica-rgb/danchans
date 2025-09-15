@@ -48,10 +48,16 @@ questions = st.session_state.questions
 
 if st.session_state.q_index < len(questions):
     q = st.session_state.questions[st.session_state.q_index]
-    st.image(q["image"], caption="このだんちゃんはどっち？", use_container_width=True)
+    
+   # Pillowで画像を開く
+    if os.path.exists(q["image"]):
+        img = Image.open(q["image"])
+        st.image(img, caption="このだんちゃんはどっち？", use_container_width=True)
+    else:
+        st.error(f"画像ファイルが見つかりません: {q['image']}")
 
     choice = st.radio("答えを選んでください:", q["options"], key=f"q{st.session_state.q_index}")
-
+    
     if not st.session_state.answered:
         if st.button("回答する"):
             if choice == q["answer"]:
@@ -76,6 +82,7 @@ else:
         st.session_state.q_index = 0
         st.session_state.score = 0
         st.session_state.answered = False
+
 
 
 
