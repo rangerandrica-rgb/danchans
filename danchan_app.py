@@ -72,7 +72,8 @@ else:
     st.write(f"あなたのスコア: {st.session_state.score} / {len(questions)}")
     if st.button("もう一度だんちゃんと向き合ってみる"):
 # ランダムに新しい問題を選び直す
-        st.session_state.questions = random.sample(questions, 5)
+        st.session_state.questions = random.sample(all_questions, 5)
         st.session_state.q_index = 0
         st.session_state.score = 0
         st.session_state.answered = False
+
