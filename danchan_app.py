@@ -1,6 +1,7 @@
 import streamlit as st
 import random
 from PIL import Image
+import os
 
 st.title("あなたのだんちゃんレベルは？")
 
@@ -77,6 +78,7 @@ else:
         st.session_state.q_index = 0
         st.session_state.score = 0
         st.session_state.answered = False
+
 
 
 
