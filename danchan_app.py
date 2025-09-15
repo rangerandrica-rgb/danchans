@@ -4,7 +4,7 @@ from PIL import Image
 
 st.title("あなたのだんちゃんレベルは？")
 
-questions = [
+all_questions = [
     {"image": "danchan/danchan1.jpg", "options": ["動物", "人間"], "answer": "人間"},
     {"image": "danchan/danchan2.jpg", "options": ["動物", "人間"], "answer": "人間"},
     {"image": "danchan/danchan3.jpg", "options": ["動物", "人間"], "answer": "人間"},
@@ -35,7 +35,7 @@ questions = [
 
 # セッションごとにランダム5問を選ぶ
 if "questions" not in st.session_state:
-    st.session_state.questions = random.sample(questions, 5)
+    st.session_state.questions = random.sample(all_questions, 5)
     st.session_state.q_index = 0
     st.session_state.score = 0
 
@@ -76,4 +76,5 @@ else:
         st.session_state.q_index = 0
         st.session_state.score = 0
         st.session_state.answered = False
+
 
