@@ -49,8 +49,8 @@ questions = st.session_state.questions
 
 if st.session_state.q_index < len(questions):
     q = st.session_state.questions[st.session_state.q_index]
-    st.write(q["image"])
-    img = Image.open(f"danchan/{os.path.basename(q['image'])}")
+    st.write("画像パス:"q["image"])
+    img = Image.open(q['image'])
     st.image(img, caption="このだんちゃんはどっち？", use_container_width=True)
     choice = st.radio("答えを選んでください:", q["options"], key=f"q{st.session_state.q_index}")
 
@@ -78,6 +78,7 @@ else:
         st.session_state.q_index = 0
         st.session_state.score = 0
         st.session_state.answered = False
+
 
 
 
