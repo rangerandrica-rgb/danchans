@@ -14,7 +14,7 @@ questions = [
     {"image": "danchan/danchan5.jpg", "options": ["動物", "人間"], "answer": "人間"},
     {"image": "danchan/danchan6.jpg", "options": ["動物", "人間"], "answer": "人間"},
     {"image": "danchan/danchan7.jpg", "options": ["動物", "人間"], "answer": "人間"},
-    {"image": "danchan/danchan8.JPG", "options": ["動物", "人間"], "answer": "人間"},
+    {"image": "danchan/danchan8.jpg", "options": ["動物", "人間"], "answer": "人間"},
     {"image": "danchan/danchan9.jpg", "options": ["動物", "人間"], "answer": "人間"},
     {"image": "danchan/danchan10.jpg", "options": ["動物", "人間"], "answer": "人間"},
     {"image": "danchan/danchan11.jpg", "options": ["動物", "人間"], "answer": "人間"},
@@ -76,6 +76,7 @@ else:
         st.session_state.q_index = 0
         st.session_state.score = 0
         st.session_state.answered = False
+
 
 
 
